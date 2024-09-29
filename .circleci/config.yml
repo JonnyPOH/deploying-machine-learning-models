@@ -51,10 +51,16 @@ jobs:
           node-version: '16.13'
       - run: node --version
       - run: npm i -g @railway/cli
+
+      # # Install the Railway CLI
+      # - run:
+      #     name: Install Railway CLI
+      #     command: curl -fsSL https://cli.railway.app/install.sh | sh
+
       # Use the Railway token to authenticate
       - run:
           name: Set Railway Auth Token
-          command: export RAILWAY_TOKEN=$RAILWAY_SERVICE_TOKEN
+          command: export RAILWAY_TOKEN=$RAILWAY_TOKEN
 
       # Deploy the project to Railway
       - run:
