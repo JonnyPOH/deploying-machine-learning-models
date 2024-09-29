@@ -54,7 +54,7 @@ jobs:
       # Use the Railway token to authenticate
       - run:
           name: Login to Railway (Ensure RAILWAY_TOKEN is set)
-          command: railway login --token $RAILWAY_TOKEN
+          command: echo $RAILWAY_TOKEN | railway login
 
       # Deploy the project to Railway
       - run:
