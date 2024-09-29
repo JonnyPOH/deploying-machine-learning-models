@@ -53,12 +53,12 @@ jobs:
       - run: npm i -g @railway/cli
       # Use the Railway token to authenticate
       - run:
-          name: Login to Railway (Ensure RAILWAY_TOKEN is set)
-          command: echo $RAILWAY_TOKEN | railway login --browserless
+          name: Set Railway Auth Token
+          command: export RAILWAY_TOKEN=$RAILWAY_SERVICE_TOKEN
 
       # Deploy the project to Railway
       - run:
-          name: Deploy to Railway App (Ensure RAILWAY_TOKEN is set)
+          name: Deploy to Railway App
           command: |
             cd section-07-ci-and-publishing/house-prices-api
             railway up --detach
