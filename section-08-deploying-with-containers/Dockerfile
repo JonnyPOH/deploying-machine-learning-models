@@ -6,7 +6,7 @@ RUN adduser --disabled-password --gecos '' ml-api-user
 WORKDIR /opt/house-prices-api
 
 ARG PIP_EXTRA_INDEX_URL
-# RUN echo "PIP_EXTRA_INDEX_URL: $PIP_EXTRA_INDEX_URL"
+RUN echo "PIP_EXTRA_INDEX_URL: $PIP_EXTRA_INDEX_URL"
 
 # Install requirements, including from Gemfury
 ADD ./house-prices-api /opt/house-prices-api/
